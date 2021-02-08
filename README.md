@@ -147,7 +147,7 @@ model.addConstr(  s[4] + p[4] + 15 - s[14]      <=              100*(1-x[4, 14])
 model.addConstr(  s[14] + p[14] + 30 - s[4]      <=              100*(1-x[14, 4]) )
 ```
 
-### 5. Optimize
+## Optimization
 
 ```python
 model.setObjective(quicksum(s[j] for j in range(feature_num)), GRB.MINIMIZE )
