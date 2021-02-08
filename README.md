@@ -125,13 +125,16 @@ for i in range(feature_num):
 <img src="https://latex.codecogs.com/gif.latex?\sum_{j&space;\neq&space;k}p(k)x(j,k)<=s(j)&space;(\nabla&space;j=1,2,...J)" />
 
 ```python
-#Start Timeに対する制約
+#Start Time Constraint
 for j in range(feature_num):
     model.addConstr( quicksum(p[k]*x[k , j] for k in range(feature_num) if j != k)  <= s[j])
 ```
 
 #### 4. Specific Constraint
 
+* Consider below 3 specific constraint
+** a
+** a
 
 ```python
 list_ = [0, 1, 3, 5, 7, 12, 13]
