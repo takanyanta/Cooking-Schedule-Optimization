@@ -106,7 +106,7 @@ for j in range(feature_num):
         if j < k:
             model.addConstr( x[j, k] + x[k, j] == 1)
 ```
-### 3-2-2. Disjunctive Constraint
+#### 3-2-2. Disjunctive Constraint
 
 * By using [*BIG-M*](http://web.tuat.ac.jp/~miya/fujie_ORSJ.pdf) technique, constraint of starts time can be defined as below;
 
@@ -133,24 +133,27 @@ for j in range(feature_num):
 #### 3-2-4. Specific Constraint
 
 * Consider below 3 specific constraint
-
-** a
-** a
+    * In the same recipe, the job can't pass the post-job
+    * When using grill or frying pan, for the safe, heating time is strictly obeyed
+    * As *HOTCOOK* is shared with Steamed Sweet Potatoes and Roast Beef, so it can't use simultaneously
 
 ```python
+# In the same redipe, it can't pass post-job
 list_ = [0, 1, 3, 5, 7, 12, 13]
 
 for i in list_:
     model.addConstr( s[i] + p[i]  <= s[i+1] )
 
+# when using grill or frying pan, for the safe, heating time is strictly obeyed
 model.addConstr( s[9] + p[9] + 5 == s[10] )
 model.addConstr( s[10] + p[10] + 3 == s[11] )
 
 model.addConstr( s[15] + p[15] + 4 == s[16] )
 model.addConstr( s[16] + p[16] + 3 == s[17] )
 
-model.addConstr(  s[4] + p[4] + 15 - s[14]      <=              100*(1-x[4, 14]) )
-model.addConstr(  s[14] + p[14] + 30 - s[4]      <=              100*(1-x[14, 4]) )
+# As Hotcook is shared with Steamed Sweet Potatoes and Roast Beef, so it can't use simultaneously
+model.addConstr(  s[4] + p[4] + 15 - s[14]   <=  100*(1-x[4, 14]) )
+model.addConstr(  s[14] + p[14] + 30 - s[4]  <=  100*(1-x[14, 4]) )
 ```
 
 ## 3-3. Optimization
