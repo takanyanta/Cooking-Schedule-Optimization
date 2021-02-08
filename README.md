@@ -33,3 +33,8 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 |5|Grilled Fish|Fish|Grill|***9***|-|***10***|-|***11***|
 |6|Roast Beef|Beef, Sweet Sake, Soy Sauce|Electric Pot(*HEALSIO HOTCOOK KN-HW24C*)|***12***|***13***|***14***|-|-|
 |7|Pancake|Pancake Mix, Egg, Milk|Frying Pan|***15***|-|***16***|-|***17***|
+
+
+
+## Formulation
+
