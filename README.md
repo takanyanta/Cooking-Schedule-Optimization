@@ -106,8 +106,17 @@ for j in range(feature_num):
         if j < k:
             model.addConstr( x[j, k] + x[k, j] == 1)
 ```
+### 2. Disjunctive Constraint
 
-#### 2. Symmetrical Constraint
+```python
+# Disjunctive Constraint
+for i in range(feature_num):
+    for j in range(feature_num):
+        if i != j:
+            model.addConstr( s[i] + p[i] - s[j] <=     100*(1-x[i, j]))
+```
+
+#### 3. Start time Constraint
 
 For the constraint of the start time, below constraint can hold
 
@@ -117,5 +126,24 @@ For the constraint of the start time, below constraint can hold
 #Start Timeに対する制約
 for j in range(feature_num):
     model.addConstr( quicksum(p[k]*x[k , j] for k in range(feature_num) if j != k)  <= s[j])
+```
+
+#### 4. Specific Constraint
+
+
+```python
+list_ = [0, 1, 3, 5, 7, 12, 13]
+
+for i in list_:
+    model.addConstr( S[i] + process_time[i]  <= S[i+1] )
+
+model.addConstr( S[9] + process_time[9] + 5 == S[10] )
+model.addConstr( S[10] + process_time[10] + 3 == S[11] )
+
+model.addConstr( S[15] + process_time[15] + 4 == S[16] )
+model.addConstr( S[16] + process_time[16] + 3 == S[17] )
+
+model.addConstr(  S[4] + process_time[4] + 15 - S[14]      <=              100*(1-X[4, 14]) )
+model.addConstr(  S[14] + process_time[14] + 30 - S[4]      <=              100*(1-X[14, 4]) )
 ```
 
