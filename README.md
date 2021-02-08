@@ -108,6 +108,8 @@ for j in range(feature_num):
 ```
 ### 2. Disjunctive Constraint
 
+If job j starts before job k, 
+
 ```python
 # Disjunctive Constraint
 for i in range(feature_num):
