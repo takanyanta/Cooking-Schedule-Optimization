@@ -20,3 +20,5 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 |6|Roast Beef|Beef, Sweet Sake, Soy Sauce|Electric Pot(*HEALSIO HOTCOOK KN-HW24C*)|make a seasoning:**2min**|heating seasoning:**2min**|set the material to the device:**2min**|(heating:**30min**)||
 |7|Pancake|Pancake Mix, Egg, Milk|Frying Pan|preprocess material|(burn the front:**4min**)|Turn over:**1min**|(burn the back:**3min**)|Extinguish:**1min**|
 
+* Though it takes much more time to cook roast beef, for computational simplexity, it is assumed that it itakes 30minute
+* Though, after cooking, it is need to serve foods and clean them up, it is assumed that they doesn't be needed.
