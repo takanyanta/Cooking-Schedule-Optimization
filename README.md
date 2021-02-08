@@ -94,4 +94,8 @@ for j in range(feature_num):
 model.update()
 ```
 
+### Add Constraint
 
+#### 1. Symmetrical Constraint
+
+With the Symmetrical Constraint, <img src="https://latex.codecogs.com/gif.latex?x(j,k)&plus;x(k,j)=1&space;(\nabla&space;j&space;\neq&space;k)" /> can be said.
