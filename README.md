@@ -98,7 +98,7 @@ model.update()
 
 #### 1. Symmetrical Constraint
 
-With the Symmetrical Constraint, <img src="https://latex.codecogs.com/gif.latex?x(j,k)&plus;x(k,j)=1&space;(\nabla&space;j&space;\neq&space;k)" /> can be said.
+With the symmetrical constraint, <img src="https://latex.codecogs.com/gif.latex?x(j,k)&plus;x(k,j)=1&space;(\nabla&space;j&space;\neq&space;k)" /> can be said.
 
 ```python
 for j in range(feature_num):
@@ -107,3 +107,8 @@ for j in range(feature_num):
             model.addConstr( x[j, k] + x[k, j] == 1)
 ```
 
+#### 2. Symmetrical Constraint
+
+For the constraint of the start time, below constraint can hold
+
+<img src="https://latex.codecogs.com/gif.latex?\sum_{j&space;\neq&space;k}p(k)x(j,k)<=s(j)&space;(\nabla&space;j=1,2,...J)" />
