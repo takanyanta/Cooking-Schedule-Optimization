@@ -112,3 +112,10 @@ for j in range(feature_num):
 For the constraint of the start time, below constraint can hold
 
 <img src="https://latex.codecogs.com/gif.latex?\sum_{j&space;\neq&space;k}p(k)x(j,k)<=s(j)&space;(\nabla&space;j=1,2,...J)" />
+
+```python
+#Start Timeに対する制約
+for j in range(feature_num):
+    model.addConstr( quicksum(p[k]*x[k , j] for k in range(feature_num) if j != k)  <= s[j])
+```
+
