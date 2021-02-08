@@ -108,6 +108,7 @@ for j in range(feature_num):
 ```
 ### 2. Disjunctive Constraint
 
+* By using [*BIG-M*](http://web.tuat.ac.jp/~miya/fujie_ORSJ.pdf) technique, 
 If job j starts before job k, 
 
 ```python
