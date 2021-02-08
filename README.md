@@ -71,4 +71,4 @@ p[17] = 1
 
 ### Define Variables
 
-* Define <img src="https://latex.codecogs.com/gif.latex?x(j,k)" /> as 
+* Define <img src="https://latex.codecogs.com/gif.latex?x(j,k)" /> as a binary variable which equals to 1 when procedure j starts before procedure k and equals to 0 when procedure j doesn't starts before procedure
