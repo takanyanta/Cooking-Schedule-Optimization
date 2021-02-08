@@ -98,7 +98,7 @@ model.update()
 
 #### 1. Symmetrical Constraint
 
-With the symmetrical constraint, <img src="https://latex.codecogs.com/gif.latex?x(j,k)&plus;x(k,j)=1&space;(\nabla&space;j&space;\neq&space;k)" /> can hold
+* With the symmetrical constraint, <img src="https://latex.codecogs.com/gif.latex?x(j,k)&plus;x(k,j)=1&space;(\nabla&space;j&space;\neq&space;k)" /> can hold
 
 ```python
 for j in range(feature_num):
@@ -108,8 +108,7 @@ for j in range(feature_num):
 ```
 ### 2. Disjunctive Constraint
 
-* By using [*BIG-M*](http://web.tuat.ac.jp/~miya/fujie_ORSJ.pdf) technique, 
-If job j starts before job k, 
+* By using [*BIG-M*](http://web.tuat.ac.jp/~miya/fujie_ORSJ.pdf) technique, constraint of starts time can be defined as below;
 
 ```python
 # Disjunctive Constraint
@@ -121,7 +120,7 @@ for i in range(feature_num):
 
 #### 3. Start time Constraint
 
-For the constraint of the start time, below constraint can hold
+* For the constraint of the start time, below constraint can hold
 
 <img src="https://latex.codecogs.com/gif.latex?\sum_{j&space;\neq&space;k}p(k)x(j,k)<=s(j)&space;(\nabla&space;j=1,2,...J)" />
 
