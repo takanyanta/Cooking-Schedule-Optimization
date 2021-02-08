@@ -37,4 +37,4 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 
 
 ## Formulation
-
+* Define the processtime of i-th procedure as <img src="https://latex.codecogs.com/gif.latex?p_i" />
