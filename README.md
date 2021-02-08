@@ -31,4 +31,4 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 |4|Miso Soup|Dried Sardines, Miso, Water, Onion|Electric Pot(*e-wonder OEDA30 3L*)||||||
 |5|Grilled Fish|Fish|Grill||||||
 |6|Roast Beef|Beef, Sweet Sake, Soy Sauce|Electric Pot(*HEALSIO HOTCOOK KN-HW24C*)||||||
-|7|Pancake|Pancake Mix, Egg, Milk|Frying Pan|preprocess material||||||
+|7|Pancake|Pancake Mix, Egg, Milk|Frying Pan||||||
