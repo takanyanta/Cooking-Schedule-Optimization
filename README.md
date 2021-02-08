@@ -13,8 +13,8 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 |Recipe No.|Name|Material|Cookware|Procedure1|Procedure2|Procedure3|Procedure4|Procedure5|
 ---|---|---|---|---|---|---|---|---
 |1|French Fries|Potato, Salad Oil|Toaster Oven|Peel & Cut:**5min**|set the material to the device:**1min**|(heating:**15min**)|clean up the sink(**1min**) ||
-|2|Steamed Sweet Potatoes|Sweet Potato, Water|Electric Pot(*HEALSIO HOTCOOK KN-HW24C*)|Cut(**3min**)|set the material to the device:**1min**|(heating:**15min**)|||
-|3|Steamed Eggplant|Eggplant|Microwave|Cut(**4min**)|set the material to the device:**1min**|(heating:**5min**)|||
+|2|Steamed Sweet Potatoes|Sweet Potato, Water|Electric Pot(*HEALSIO HOTCOOK KN-HW24C*)|Cut:**3min**|set the material to the device:**1min**|(heating:**15min**)|||
+|3|Steamed Eggplant|Eggplant|Microwave|Cut:**4min**|set the material to the device:**1min**|(heating:**5min**)|||
 |4|Miso Soup|Dried Sardines, Miso, Water, Onion|Electric Pot(*e-wonder OEDA30 3L*)|Peel & Cut:**3min**|set the material to the device:**2min**|(heating:**20min**)|||
 |5|Grilled Fish|Fish|Grill|set the material to the device:**1min**|(burn the front:**5min**)|Turn over:**1min**|(burn the back:**3min**)|Extinguish:**1min**|
 |6|Roast Beef|Beef, Sweet Sake, Soy Sauce|Electric Pot(*HEALSIO HOTCOOK KN-HW24C*)|make a seasoning:**2min**|heating seasoning:**2min**|set the material to the device:**2min**|(heating:**30min**)||
@@ -37,7 +37,7 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 
 
 ## Formulation
-* Define the process time of i-th procedure as <img src="https://latex.codecogs.com/gif.latex?p_i" />
+* Define the process time of i-th job as <img src="https://latex.codecogs.com/gif.latex?p_i" />
 
 (<img src="https://latex.codecogs.com/gif.latex?p_0=5,&space;p_1=1,&space;p_2=1,p_3=3,p_4=1,p_5=4,p_6=1,p_7=3,p_8=2,p_9=1,p_{10}=1,p_{11}=1,p_{12}=2,p_{13}=2,p_{14}=2,p_{15}=4,p_{16}=1,p_{17}=1" />)
 
@@ -71,7 +71,7 @@ p[17] = 1
 
 ### Define Variables
 
-* Define <img src="https://latex.codecogs.com/gif.latex?x(j,k)" /> as a binary variable which equals to 1 when j-th procedure starts before k-th procedure and equals to 0 when procedure j doesn't starts before procedure k
+* Define <img src="https://latex.codecogs.com/gif.latex?x(j,k)" /> as a binary variable which equals to 1 when j-th procedure starts before k-th procedure and equals to 0 when job j doesn't starts before job k
 * Define <img src="https://latex.codecogs.com/gif.latex?s(j)" /> as a continuous variable which explains the start time of j-th procedure
 
 ```python
