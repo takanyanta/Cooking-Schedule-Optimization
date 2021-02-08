@@ -37,6 +37,38 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 
 
 ## Formulation
-* Define the processtime of i-th procedure as <img src="https://latex.codecogs.com/gif.latex?p_i" />
+* Define the process time of i-th procedure as <img src="https://latex.codecogs.com/gif.latex?p_i" />
 
 (<img src="https://latex.codecogs.com/gif.latex?p_0=5,&space;p_1=1,&space;p_2=1,p_3=3,p_4=1,p_5=4,p_6=1,p_7=3,p_8=2,p_9=1,p_{10}=1,p_{11}=1,p_{12}=2,p_{13}=2,p_{14}=2,p_{15}=4,p_{16}=1,p_{17}=1" />)
+
+```python
+p = {}
+p[0] = 5
+p[1] = 1
+p[2] = 1
+
+p[3] = 3
+p[4] = 1
+
+p[5] = 4
+p[6] = 1
+
+p[7] = 3
+p[8] = 2
+
+p[9] = 1
+p[10] = 1
+p[11] = 1
+
+p[12] = 2
+p[13] = 2
+p[14] = 2
+
+p[15] = 4
+p[16] = 1
+p[17] = 1
+```
+
+### Define Variables
+
+* Define <img src="https://latex.codecogs.com/gif.latex?x(j,k)" /> as 
