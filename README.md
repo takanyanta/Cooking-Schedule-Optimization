@@ -1,12 +1,12 @@
 # Cooking-Optimization
 Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 
-## Purpose
+## 1. Purpose
 
 * To explore optimal procedure of cooking
 * To minimize cumulative cooking time
 
-## Assumption
+## 2. Assumption
 
 * Define cooking time as below;
 
@@ -36,7 +36,7 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 
 
 
-## Formulation
+## 3. Formulation
 * Define the process time of i-th job as <img src="https://latex.codecogs.com/gif.latex?p_i" />
 
 (<img src="https://latex.codecogs.com/gif.latex?p_0=5,&space;p_1=1,&space;p_2=1,p_3=3,p_4=1,p_5=4,p_6=1,p_7=3,p_8=2,p_9=1,p_{10}=1,p_{11}=1,p_{12}=2,p_{13}=2,p_{14}=2,p_{15}=4,p_{16}=1,p_{17}=1" />)
@@ -69,7 +69,7 @@ p[16] = 1
 p[17] = 1
 ```
 
-### Define Variables
+### 3-1. Define Variables
 
 * Define <img src="https://latex.codecogs.com/gif.latex?x(j,k)" /> as a binary variable which equals to 1 when j-th procedure starts before k-th procedure and equals to 0 when job j doesn't starts before job k
 * Define <img src="https://latex.codecogs.com/gif.latex?s(j)" /> as a continuous variable which explains the start time of j-th procedure
@@ -94,9 +94,9 @@ for j in range(feature_num):
 model.update()
 ```
 
-### Add Constraint
+### 3-2. Add Constraint
 
-#### 1. Symmetrical Constraint
+#### 3-2-1. Symmetrical Constraint
 
 * With the symmetrical constraint, <img src="https://latex.codecogs.com/gif.latex?x(j,k)&plus;x(k,j)=1&space;(\nabla&space;j&space;\neq&space;k)" /> can hold
 
@@ -106,7 +106,7 @@ for j in range(feature_num):
         if j < k:
             model.addConstr( x[j, k] + x[k, j] == 1)
 ```
-### 2. Disjunctive Constraint
+### 3-2-2. Disjunctive Constraint
 
 * By using [*BIG-M*](http://web.tuat.ac.jp/~miya/fujie_ORSJ.pdf) technique, constraint of starts time can be defined as below;
 
@@ -118,7 +118,7 @@ for i in range(feature_num):
             model.addConstr( s[i] + p[i] - s[j] <=     100*(1-x[i, j]))
 ```
 
-#### 3. Start time Constraint
+#### 3-2-3. Start time Constraint
 
 * For the constraint of the start time, below constraint can hold
 
@@ -130,9 +130,10 @@ for j in range(feature_num):
     model.addConstr( quicksum(p[k]*x[k , j] for k in range(feature_num) if j != k)  <= s[j])
 ```
 
-#### 4. Specific Constraint
+#### 3-2-4. Specific Constraint
 
 * Consider below 3 specific constraint
+
 ** a
 ** a
 
@@ -152,7 +153,7 @@ model.addConstr(  s[4] + p[4] + 15 - s[14]      <=              100*(1-x[4, 14])
 model.addConstr(  s[14] + p[14] + 30 - s[4]      <=              100*(1-x[14, 4]) )
 ```
 
-## Optimization
+## 3-3. Optimization
 
 ```python
 model.setObjective(quicksum(s[j] for j in range(feature_num)), GRB.MINIMIZE )
