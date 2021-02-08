@@ -72,7 +72,7 @@ p[17] = 1
 ### Define Variables
 
 * Define <img src="https://latex.codecogs.com/gif.latex?x(j,k)" /> as a binary variable which equals to 1 when j-th procedure starts before k-th procedure and equals to 0 when procedure j doesn't starts before procedure k
-* * Define <img src="https://latex.codecogs.com/gif.latex?s(j)" /> as a continuous variable which explains the start time of j-th procedure
+* Define <img src="https://latex.codecogs.com/gif.latex?s(j)" /> as a continuous variable which explains the start time of j-th procedure
 
 ```python
 # Deine Model
