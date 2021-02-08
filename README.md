@@ -98,7 +98,7 @@ model.update()
 
 #### 1. Symmetrical Constraint
 
-With the symmetrical constraint, <img src="https://latex.codecogs.com/gif.latex?x(j,k)&plus;x(k,j)=1&space;(\nabla&space;j&space;\neq&space;k)" /> can be said.
+With the symmetrical constraint, <img src="https://latex.codecogs.com/gif.latex?x(j,k)&plus;x(k,j)=1&space;(\nabla&space;j&space;\neq&space;k)" /> can hold
 
 ```python
 for j in range(feature_num):
@@ -135,15 +135,22 @@ for j in range(feature_num):
 list_ = [0, 1, 3, 5, 7, 12, 13]
 
 for i in list_:
-    model.addConstr( S[i] + process_time[i]  <= S[i+1] )
+    model.addConstr( s[i] + p[i]  <= s[i+1] )
 
-model.addConstr( S[9] + process_time[9] + 5 == S[10] )
-model.addConstr( S[10] + process_time[10] + 3 == S[11] )
+model.addConstr( s[9] + p[9] + 5 == s[10] )
+model.addConstr( s[10] + p[10] + 3 == s[11] )
 
-model.addConstr( S[15] + process_time[15] + 4 == S[16] )
-model.addConstr( S[16] + process_time[16] + 3 == S[17] )
+model.addConstr( s[15] + p[15] + 4 == s[16] )
+model.addConstr( s[16] + p[16] + 3 == s[17] )
 
-model.addConstr(  S[4] + process_time[4] + 15 - S[14]      <=              100*(1-X[4, 14]) )
-model.addConstr(  S[14] + process_time[14] + 30 - S[4]      <=              100*(1-X[14, 4]) )
+model.addConstr(  s[4] + p[4] + 15 - s[14]      <=              100*(1-x[4, 14]) )
+model.addConstr(  s[14] + p[14] + 30 - s[4]      <=              100*(1-x[14, 4]) )
 ```
 
+### 5. Optimize
+
+```python
+model.setObjective(quicksum(s[j] for j in range(feature_num)), GRB.MINIMIZE )
+
+model.optimize()
+```
