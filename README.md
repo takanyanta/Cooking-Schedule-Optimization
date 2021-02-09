@@ -272,3 +272,4 @@ pio.write_html(fig,file="./6-1.html")
 ## Conclusion
 
 * Occupancy rate : (51-12)/51=76.4%
+* As the device constraints causes lost time, new equipment may help me to save my hours.
