@@ -1,7 +1,7 @@
 
 
 # Cooking-Optimization
-Linear Programming, Optimization, Production Engineering(Industrial Engineering)
+Linear Programming(Gurobi Grammer), Optimization, Production Engineering(Industrial Engineering)
 
 ## 1. Purpose
 
