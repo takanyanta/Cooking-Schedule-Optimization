@@ -18,7 +18,7 @@ Linear Programming, Optimization, Production Engineering(Industrial Engineering)
 |4|Miso Soup|Dried Sardines, Miso, Water, Onion|Electric Pot(*e-wonder OEDA30 3L*)|Peel & Cut:**3min**|set the material to the device:**2min**|(heating:**20min**)|||
 |5|Grilled Fish|Fish|Grill|set the material to the device:**1min**|(burn the front:**5min**)|Turn over:**1min**|(burn the back:**3min**)|Extinguish:**1min**|
 |6|Roast Beef|Beef, Sweet Sake, Soy Sauce|Electric Pot(*HEALSIO HOTCOOK KN-HW24C*)|make a seasoning:**2min**|heating seasoning:**2min**|set the material to the device:**2min**|(heating:**30min**)||
-|7|Pancake|Pancake Mix, Egg, Milk|Frying Pan|preprocess material|(burn the front:**4min**)|Turn over:**1min**|(burn the back:**3min**)|Extinguish:**1min**|
+|7|Pancake|Pancake Mix, Egg, Milk|Frying Pan|preprocess material & set to device|(burn the front:**4min**)|Turn over:**1min**|(burn the back:**3min**)|Extinguish:**1min**|
 
 * Though it takes much more time to cook roast beef, for computational simplexity, it is assumed that it itakes 30minute
 * Though, after cooking, it is need to serve foods and clean them up, it is assumed that they doesn't be needed.
@@ -195,7 +195,7 @@ dict_ = {"0":"0. French Fries:Peel&Cut", "1":"1. French Fries:set the material t
          "7":"7. Miso Soup:Peel&Cut", "8":"8. Miso Soup:set the material to the device", 
          "9":"9. Grilled Fish:set the material to the device", "10":"10. Grilled Fish:Turn over", "11":"11. Grilled Fish:Extinguish",
          "12":"12. Roast Beef:make a seasoning", "13":"13. Roast Beef:heating seasoning", "14":"14. Roast Beef:set the material to the device",
-         "15":"15. Pancake:preprocess material", "16":"16. Pancake:Turn over", "17":"17. Pancake:Extinguish"}
+         "15":"15. Pancake:preprocess material & set to device", "16":"16. Pancake:Turn over", "17":"17. Pancake:Extinguish"}
 
 result = pd.DataFrame( np.hstack( [np.array(S_)[np.argsort(np.array(S_)[:, 1]), :], 
                           np.array( [p[i] for i in  np.array(S_)[np.argsort(np.array(S_)[:, 1]), :][:, 0]] ).reshape(-1, 1)]), 
@@ -213,7 +213,7 @@ result[["Job Name", "Start Time", "Finish Time", "Unit Time"]]
 |2|3. Steamed Sweet Potatoes:Cut|6|9|3|
 |3|7. Miso Soup:Peel&Cut|9|12|3|
 |4|6. Steamed Eggplant:set the material to the de...|12|13|1|
-|5|15. Pancake:preprocess material|13|17|4|
+|5|15. Pancake:preprocess material & set to device|13|17|4|
 |6|9. Grilled Fish:set the material to the device|17|18|1|
 |7|16. Pancake:Turn over|21|22|1|
 |8|10. Grilled Fish:Turn over|23|24|1|
