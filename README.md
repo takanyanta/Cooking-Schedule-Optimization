@@ -263,3 +263,5 @@ fig = px.timeline(result, x_start="Start Time DT", x_end="Finish Time DT", y="Jo
 fig.update_yaxes(autorange="reversed") # otherwise tasks are listed from the bottom up
 pio.write_html(fig,file="./6-1.html")
 ```
+
+{% include 6-1.html %}
