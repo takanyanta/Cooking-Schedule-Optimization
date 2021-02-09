@@ -154,7 +154,7 @@ model.addConstr(  s[4] + p[4] + 15 - s[14]   <=  100*(1-x[4, 14]) )
 model.addConstr(  s[14] + p[14] + 30 - s[4]  <=  100*(1-x[14, 4]) )
 ```
 
-## 3-3. Optimization
+### 3-3. Optimization
 
 * Define objective function as below;
    * <img src="https://latex.codecogs.com/gif.latex?Minimize&space;\sum_{j=1}^{N}&space;s(j)" />
@@ -164,3 +164,32 @@ model.setObjective(quicksum(s[j] for j in range(feature_num)), GRB.MINIMIZE )
 
 model.optimize()
 ```
+
+## 4. Result
+
+### 4-1. Check the status and the result
+
+|Status|Explain|
+---|---
+|1|Optimal|
+|3|Infeasible|
+
+```python
+print(model.Status)
+
+if model.Status == 1 :
+    print('Opt. Value=', model.ObjVal)
+
+    S_ = []
+    for j in range(feature_num):
+        S_.append([j, s[j].X])
+
+result = pd.DataFrame( np.hstack( [np.array(S_)[np.argsort(np.array(S_)[:, 1]), :], 
+                          np.array( [p[i] for i in  np.array(S_)[np.argsort(np.array(S_)[:, 1]), :][:, 0]] ).reshape(-1, 1)]), 
+            columns=["Process Name", "Start Time", "Unit Time"])
+
+result["Finish Time"] = result["Start Time"] + result["Unit Time"]
+result[["Process Name", "Start Time", "Finish Time", "Unit Time"]]
+```
+
+
