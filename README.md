@@ -267,3 +267,8 @@ pio.write_html(fig,file="./6-1.html")
 ```
 
 ![Extract the frame](https://github.com/takanyanta/Cooking-Optimization/blob/main/image.png "process1")
+
+
+## Conclusion
+
+* Occupancy rate : (51-12)/51=76.4%
