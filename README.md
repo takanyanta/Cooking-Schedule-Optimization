@@ -266,4 +266,4 @@ fig.update_yaxes(autorange="reversed") # otherwise tasks are listed from the bot
 pio.write_html(fig,file="./6-1.html")
 ```
 
-<takanynata>.github.io/<Cooking-Optimization>/<6-1.html>.
+![Extract the frame](https://github.com/takanyanta/Cooking-Optimization/blob/main/image.png "process1")
