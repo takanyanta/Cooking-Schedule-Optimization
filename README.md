@@ -227,4 +227,38 @@ result[["Job Name", "Start Time", "Finish Time", "Unit Time"]]
 |16|8. Miso Soup:set the material to the device|38|40|2|
 |17|14. Roast Beef:set the material to the device|49|51|2|
 
+### 4-2. Visualization
 
+* Draw gantt chart
+
+```python
+color = []
+for i in range(len(result)):
+    if "French Fries" in result["Job Name"].iat[i]:
+        color.append(0)
+    elif "Steamed Sweet Potatoes" in result["Job Name"].iat[i]:
+        color.append(1)
+    elif "Steamed Eggplant" in result["Job Name"].iat[i]:
+        color.append(2)
+    elif "Miso Soup" in result["Job Name"].iat[i]:
+        color.append(3)
+    elif "Grilled Fish" in result["Job Name"].iat[i]:
+        color.append(4)
+    elif "Roast Beef" in result["Job Name"].iat[i]:
+        color.append(5)
+    elif "Pancake" in result["Job Name"].iat[i]:
+        color.append(6)
+
+result["Color"] = color
+
+import plotly.express as px
+import plotly.io as pio
+from datetime import datetime
+
+result["Start Time DT"] = result["Start Time"].apply(lambda x : datetime(2021, 2, 9, 0, 0, int(x)))
+result["Finish Time DT"] = result["Finish Time"].apply(lambda x : datetime(2021, 2, 9, 0, 0, int(x)))
+
+fig = px.timeline(result, x_start="Start Time DT", x_end="Finish Time DT", y="Job Name", color="Color")
+fig.update_yaxes(autorange="reversed") # otherwise tasks are listed from the bottom up
+pio.write_html(fig,file="./6-1.html")
+```
