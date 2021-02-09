@@ -157,7 +157,7 @@ model.addConstr(  s[14] + p[14] + 30 - s[4]  <=  100*(1-x[14, 4]) )
 ## 3-3. Optimization
 
 * Define objective function as below;
-   * 
+   * <img src="https://latex.codecogs.com/gif.latex?Minimize&space;\sum_{j=1}^{N}&space;s(j)" />
 
 ```python
 model.setObjective(quicksum(s[j] for j in range(feature_num)), GRB.MINIMIZE )
