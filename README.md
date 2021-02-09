@@ -189,12 +189,21 @@ if model.Status == 1 :
     for j in range(feature_num):
         S_.append([j, s[j].X])
 
+dict_ = {"0":"0. French Fries:Peel&Cut", "1":"1. French Fries:set the material to the device", "2":"2. French Fries:clean up the sink", 
+         "3":"3. Steamed Sweet Potatoes:Cut", "4":"4. Steamed Sweet Potatoes:set the material to the device",
+         "5":"5. Steamed Eggplant:Cut", "6":"6. Steamed Eggplant:set the material to the device",
+         "7":"7. Miso Soup:Peel&Cut", "8":"8. Miso Soup:set the material to the device", 
+         "9":"9. Grilled Fish:set the material to the device", "10":"10. Grilled Fish:Turn over", "11":"11. Grilled Fish:Extinguish",
+         "12":"12. Roast Beef:make a seasoning", "13":"13. Roast Beef:heating seasoning", "14":"14. Roast Beef:set the material to the device",
+         "15":"15. Pancake:preprocess material", "16":"16. Pancake:Turn over", "17":"17. Pancake:Extinguish"}
+
 result = pd.DataFrame( np.hstack( [np.array(S_)[np.argsort(np.array(S_)[:, 1]), :], 
                           np.array( [p[i] for i in  np.array(S_)[np.argsort(np.array(S_)[:, 1]), :][:, 0]] ).reshape(-1, 1)]), 
-            columns=["Process Name", "Start Time", "Unit Time"])
+            columns=["Job Index", "Start Time", "Unit Time"])
 
 result["Finish Time"] = result["Start Time"] + result["Unit Time"]
-result[["Process Name", "Start Time", "Finish Time", "Unit Time"]]
+result["Job Name"] = result["Job Index"].astype("int").apply(lambda x : dict_[str(x)])
+result[["Job Name", "Start Time", "Finish Time", "Unit Time"]]
 ```
 
 |Index|Job Name|Start Time|Finish Time|Unit Time|
