@@ -197,8 +197,9 @@ result["Finish Time"] = result["Start Time"] + result["Unit Time"]
 result[["Process Name", "Start Time", "Finish Time", "Unit Time"]]
 ```
 
-||||||
+|Index|Process Name|Start Time|Finish Time|Unit Time|
 ---|---|---|---|---
+|0|12|0|2|2|
 |1|5|2|6|4|
 |2|3|6|9|3|
 |3|7|9|12|3|
@@ -215,6 +216,5 @@ result[["Process Name", "Start Time", "Finish Time", "Unit Time"]]
 |14|2|35|36|1|
 |15|13|36|38|2|
 |16|8|38|40|2|
-|17|14|49|51|2|
 |17|14|49|51|2|
 
