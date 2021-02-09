@@ -120,7 +120,7 @@ for i in range(feature_num):
 #### 3-2-3. Start time Constraint
 
 * For the constraint of the start time, below constraint can hold
-    * <img src="https://latex.codecogs.com/gif.latex?\sum_{j&space;\neq&space;k}p(k)x(j,k)<=s(j)&space;(\nabla&space;j=1,2,...J)" />
+    * <img src="https://latex.codecogs.com/gif.latex?\sum_{j&space;\neq&space;k}p(k)x(j,k)<=s(j)&space;(\nabla&space;j=0,1,...N-1)" />
 
 ```python
 #Start Time Constraint
@@ -155,6 +155,9 @@ model.addConstr(  s[14] + p[14] + 30 - s[4]  <=  100*(1-x[14, 4]) )
 ```
 
 ## 3-3. Optimization
+
+* Define objective function as below;
+   * 
 
 ```python
 model.setObjective(quicksum(s[j] for j in range(feature_num)), GRB.MINIMIZE )
