@@ -264,4 +264,4 @@ fig.update_yaxes(autorange="reversed") # otherwise tasks are listed from the bot
 pio.write_html(fig,file="./6-1.html")
 ```
 
-{% include_relative takanyanta/Cooking-Optimization/6-1.html %}
+<takanynata>.github.io/<Cooking-Optimization>/<6-1.html>.
