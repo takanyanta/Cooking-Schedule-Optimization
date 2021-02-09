@@ -208,24 +208,25 @@ result[["Job Name", "Start Time", "Finish Time", "Unit Time"]]
 
 |Index|Job Name|Start Time|Finish Time|Unit Time|
 ---|---|---|---|---
-|0|12. Roast Beef:make a seasoning|0|2|2|
-|1|5. Steamed Eggplant:Cut|2|6|4|
-|2|3. Steamed Sweet Potatoes:Cut|6|9|3|
-|3|7. Miso Soup:Peel&Cut|9|12|3|
-|4|6. Steamed Eggplant:set the material to the de...|12|13|1|
-|5|15. Pancake:preprocess material & set to device|13|17|4|
-|6|9. Grilled Fish:set the material to the device|17|18|1|
-|7|16. Pancake:Turn over|21|22|1|
-|8|10. Grilled Fish:Turn over|23|24|1|
-|9|17. Pancake:Extinguish|25|26|1|
-|10|11. Grilled Fish:Extinguish|27|28|1|
-|11|0. French Fries:Peel&Cut|28|33|5|
-|12|4. Steamed Sweet Potatoes:set the material to ...|33|34|1|
-|13|1. French Fries:set the material to the device|34|35|1|
-|14|2. French Fries:clean up the sink|35|36|1|
-|15|13. Roast Beef:heating seasoning|36|38|2|
-|16|8. Miso Soup:set the material to the device|38|40|2|
-|17|14. Roast Beef:set the material to the device|49|51|2|
+|0|3. Steamed Sweet Potatoes:Cut|0|3|3|
+|1|12. Roast Beef:make a seasoning|3|5|2|
+|2|15. Pancake:preprocess material & set to device|5|9|4|
+|3|5. Steamed Eggplant:Cut|9|13|4|
+|4|16. Pancake:Turn over|13|14|1|
+|5|7. Miso Soup:Peel&Cut|14|17|3|
+|6|17. Pancake:Extinguish|17|18|1|
+|7|6. Steamed Eggplant:set the material to the de...|18|19|1|
+|8|9. Grilled Fish:set the material to the device|19|20|1|
+|9|0. French Fries:Peel&Cut|20|25|5|
+|10|10. Grilled Fish:Turn over|25|26|1|
+|11|11. Grilled Fish:Extinguish|29|30|1|
+|12|4. Steamed Sweet Potatoes:set the material to ...|30|31|1|
+|13|1. French Fries:set the material to the device|31|32|1|
+|14|2. French Fries:clean up the sink|32|33|1|
+|15|8. Miso Soup:set the material to the device|33|35|2|
+|16|13. Roast Beef:heating seasoning|35|37|2|
+|17|14. Roast Beef:set the material to the device|46|48|2|
+
 
 ### 4-2. Visualization
 
