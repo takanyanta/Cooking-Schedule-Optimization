@@ -130,10 +130,11 @@ for j in range(feature_num):
 
 #### 3-2-4. Specific Constraint
 
-* Consider below 3 specific constraint
+* Consider below 4 specific constraint
     * In the same recipe, the job can't pass the post-job
     * When using grill or frying pan, for the safe, heating time is strictly obeyed
     * As *HOTCOOK* is shared with Steamed Sweet Potatoes and Roast Beef, so it can't use simultaneously
+    * As Frying pan is shared with Roast Beef and Pancake, so it can't use simultaneously
 
 ```python
 # In the same redipe, it can't pass post-job
@@ -152,6 +153,10 @@ model.addConstr( s[16] + p[16] + 3 == s[17] )
 # As Hotcook is shared with Steamed Sweet Potatoes and Roast Beef, so it can't use simultaneously
 model.addConstr(  s[4] + p[4] + 15 - s[14]   <=  100*(1-x[4, 14]) )
 model.addConstr(  s[14] + p[14] + 30 - s[4]  <=  100*(1-x[14, 4]) )
+
+# As Frying pan is shared with Roast Beef and Pancake, so it can't use simultaneously
+model.addConstr(  s[13] + p[13] +  - s[17]   <=  100*(1-x[13, 17]) )
+model.addConstr(  s[17] + p[17] +  - s[13]  <=  100*(1-x[17, 13]) )
 ```
 
 ### 3-3. Optimization
